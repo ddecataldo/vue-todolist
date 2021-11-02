@@ -31,6 +31,11 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-4">
                     <div class="input-group mb-3">
+                        <span>
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                        v-model="colorBorder"
+                        >
+                        </span>
                         <input type="text" class="form-control" placeholder="Cose da fare..."
                         v-model="userText"
                         @keyup.enter="addClick"
@@ -47,7 +52,8 @@
                     <ul class="list-group">
                         <li
                         class="list-group-item d-flex justify-content-between align-items-center"
-                        v-for="(elemento, i) in myList">
+                        v-for="(elemento, i) in myList"
+                        :style="'border-left: 5px solid' + elemento.color">
                         <span>
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                             v-model="elemento.checked"

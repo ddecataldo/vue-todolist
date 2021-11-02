@@ -16,7 +16,7 @@ new Vue({
         myList: [
             {
             text: "Fare la spesa",
-            checked:false
+            checked:false,
             },
             {
             text: "Andare in banca",
@@ -27,6 +27,7 @@ new Vue({
             checked:false,
             }
         ],
+        colorBorder: "#ff000",
     },
     methods: {
         addClick(){
@@ -52,7 +53,8 @@ new Vue({
             // Pusho nell'oggetto i seguenti valori
             this.myList.push ({
                 text: getUserText,
-                checked: false
+                checked: false,
+                color: this.colorBorder,
             });
             
             // Resetto il campo input
