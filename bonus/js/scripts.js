@@ -14,10 +14,19 @@ new Vue({
         welcomeText: "Hello Vueoolean - Todolist",
         userText: "",
         myList: [
-            "Fare la spesa",
-            "Andare in banca",
-            "Comprare il pane"
-        ]
+            {
+            text: "Fare la spesa",
+            checked:false
+            },
+            {
+            text: "Andare in banca",
+            checked:false,
+            },
+            {
+            text: "Comprare il pane",
+            checked:false,
+            }
+        ],
     },
     methods: {
         addClick(){
@@ -32,7 +41,7 @@ new Vue({
 
             // Il metodo find mi permette di trovare il primo valore che corrisponde alla condizione del return.
             const found = this.myList.find((el) => {
-                return el.toLowerCase() === this.userText.toLowerCase();
+                return el.text.toLowerCase() === this.userText.toLowerCase();
             });
 
             // Se found === true allora esci
@@ -40,8 +49,11 @@ new Vue({
                 return;
             }
 
-            // Pusho nell'array la variabile
-            this.myList.push(getUserText);
+            // Pusho nell'oggetto i seguenti valori
+            this.myList.push ({
+                text: getUserText,
+                checked: false
+            });
             
             // Resetto il campo input
             this.userText = "";
