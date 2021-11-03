@@ -27,7 +27,7 @@ new Vue({
             checked:false,
             }
         ],
-        colorBorder: "#ff000",
+        colorBorder: "#000000",
     },
     methods: {
         addClick(){
